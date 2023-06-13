@@ -1,0 +1,206 @@
+
+.game{
+    padding-top: 10px;
+    min-height: 100vh;
+    position: relative;
+    background-color: transparent;
+    background-image: url(../images/poker.webp);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    display: none;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.quit-btn,.reset-btn{
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    z-index: 100;
+    background-color: #1f1e1e;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.table{
+    display: flex;
+    padding: 10px 5% 10px 5%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    gap:10px;
+}
+.card{
+    aspect-ratio: 1 / 1.5424;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    position: relative;
+    transition: transform .5s linear;
+    flex:0 0 calc((100% - 60px) / 7);
+    transform: rotateY(180deg);
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    /* overflow: hidden; */
+}
+
+.front{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 10px;
+}
+.back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.completed{
+    position: absolute;
+    top:50%;
+    right:0px;
+    font-size: 30px;
+    transform:translateX(100%);
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    height: 100px;
+    transition: height 1s 2.5s ease-in-out;
+    background-color: rgba(0,0,0,.7);
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.animation{
+    animation-name: moveLeft, moveTop;
+    animation-duration: 1.2s,1s;
+    animation-timing-function: ease-in-out,ease-in-out;
+    animation-delay: 0s, 1.2s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes moveLeft {
+    0%{
+        right: 0px;
+        transform: translateX(100%);
+    }
+    100%{
+        right:50%;
+        transform: translateX(50%);
+    }
+}
+
+@keyframes moveTop {
+    0%{
+        top:50%;
+    }
+    100%{
+        top:15%;
+    }
+}
+.finish{
+    text-align: center;
+    margin-bottom: 10px;
+    height: 70px;
+    line-height: 70px;
+    width: 100%;
+    margin: 0;
+    font-size: 70px;
+    color:white;
+}
+.attempt-count,.failure-count{
+    color: white;
+    font-size: 30px;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+.end,.continue{
+    border: none;
+    width: 100px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(112, 110, 110);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+    
+@media screen and (max-width:900px) {
+    /* .quit-btn{
+        top:unset;
+        bottom: 10px;
+    } */
+    .table{
+        padding: 10px 20px;
+    }
+    .card{
+            flex:0 0 calc((100% - 40px) / 5);
+        }
+        
+    }
+
+@media screen and (max-width:550px) {
+    .table{
+        padding: 10px;
+    }
+    .card{
+        flex:0 0 calc((100% - 30px) / 4);
+    }
+    .completed{
+        width: 80%;
+    }
+    .btns{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+        margin-top: 10px;
+    }
+    .end,.continue{
+        border: none;
+        width: 45%;
+        height: 50px;
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Roboto', sans-serif;
+        background-color: rgb(112, 110, 110);
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+ 
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/40ee76ec0f.js" crossorigin="anonymous"></script>
+    <title>Memory-game</title>
+</head>
+<body>
+    <div class="opening">
+      <div class="background-container">
+        <img class="background-card" src="../images/ace.webp" alt=""/>
+        <img class="background-card" src="../images/card-back.png" alt=""/>
+        <img class="background-card" src="../images/card-back.png" alt=""/>
+        <img class="background-card" src="../images/king.webp" alt=""/>
+        <i class="fa-solid fa-crown" id="crown-icon"></i>
+        <div class="game-title">Memorygame</div>
+        <div class="btn-container">
+            <div class="btn">Start</div>
+        </div>
+      </div>
+    <!-- <div class="container">
+        <img class="img1" src="../images/card-back.png" alt="">
+    </div> -->
+    </div>
+    <div class="game">
+        <div class="top">
+          <button class="quit-btn">Quit</button>
+          <button class="reset-btn">Reset</button>
+        </div>
+        <div class="table"></div>
+         <div class="completed">
+          <p class="finish">Finish</p>
+          <hr class="line"/>
+          <p class="attempt-count"></p>
+          <p class="failure-count"></p>
+          <div class="btns">
+            <button class="end">Quit</button>
+            <button class="continue">Continue</button>
+          </div>
+        </div>
+      </div>
+      <div class="curtain"></div>
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/game.js"></script>
+</body>
+</html>
